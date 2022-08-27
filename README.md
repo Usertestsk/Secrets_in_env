@@ -4,9 +4,7 @@
 1. Create an .env file with secrets:
 
 ```bash
-sec_url=secret.com/mr.secret
-sec_user=mr.secret
-sec_passw=supersecret123
+sec_user:supersecret123
 ```
 
 
@@ -16,9 +14,22 @@ sec_passw=supersecret123
 export DOCKER_BUILDKIT=1
 ```
 
-2. Use the --secret argument to docker build command
+2. Use the --secret argument to do a docker build:
 
-docker build -t my-nginx --secret id=my_env,src=.env .
+
+```bash
+docker build -t my-nginx --secret id=my_env,src=./env/staging.env .
+```
+3. 
+Use the --mount argument to mount the secret for every RUN directive that needs it
+```bash
+RUN --mount=type=secret,id=mysecret cat /run/secrets/mysecret
+RUN --mount=type=secret,id=yoursecret,target=/target/path/to/secret
+```
+
+4. 
+
+ docker run -d -p 8080:80 --name my-nginx my-nginx
 
 
 
