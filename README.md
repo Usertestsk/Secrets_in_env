@@ -28,8 +28,10 @@ docker build -t my-nginx --secret id=my_env,src=./env/staging.env .
 ```
 
 6. Run nginx:
- docker run -d -p 8080:80 --name my-nginx my-nginx
 
+```bash
+ docker run -d -p 8080:80 --name my-nginx my-nginx
+```
 
 
 
