@@ -1,7 +1,7 @@
 # Secrets_in_env
 
 
-1. Create an .env file with secrets to be stored in /etc/nginx/.htpasswd
+1. Create an .env file with secrets to be stored in /etc/nginx/.htpasswd. Note: This .env directory wont be copied to your Github - use lastpass instead.
 
 2. Enable BuildKit:
 
