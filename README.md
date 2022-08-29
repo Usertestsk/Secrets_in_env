@@ -35,7 +35,10 @@ RUN --mount=type=secret,id=yoursecret,target=/target/path/to/secret
 
 Add a syntax comment to the very top of your Docker file
 
+```bash
 # syntax = docker/dockerfile:1.0-experimental
+```
+
 
 Use the --mount argument to mount the secret for every RUN directive that needs it
 
